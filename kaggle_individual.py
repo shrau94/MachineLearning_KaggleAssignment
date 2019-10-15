@@ -12,7 +12,6 @@ import category_encoders as ce
 
 # Reading data
 dataset = pd.read_csv('/Users/shravani/Documents/Machine Learning/data.csv')
-dataset1 = pd.read_csv('/Users/shravani/Documents/Machine Learning/data.csv')
 
 # Removing null data
 dataset = dataset.fillna(method='bfill')
@@ -76,7 +75,7 @@ plt.show()
 
 # Predicting based on model
 dataset = pd.read_csv('/Users/shravani/Documents/Machine Learning/tcd ml 2019-20 income prediction test (without labels).csv')
-dataset1 = pd.read_csv('/Users/shravani/Documents/Machine Learning/tcd ml 2019-20 income prediction submission file.csv')
+submissionFile = pd.read_csv('/Users/shravani/Documents/Machine Learning/tcd ml 2019-20 income prediction submission file.csv')
 
 # Filling null values
 dataset = dataset.fillna(method='bfill')
@@ -107,5 +106,5 @@ y_pred_for_given_data = regression_model.predict(X)
 print(y_pred_for_given_data.size)
 
 # Saving the values in a submission file
-dataset1['Income'] = y_pred_for_given_data
-dataset1.to_csv('/Users/shravani/Documents/Machine Learning/submission.csv', index=False)
+submissionFile['Income'] = y_pred_for_given_data
+submissionFile.to_csv('/Users/shravani/Documents/Machine Learning/submission.csv', index=False)
